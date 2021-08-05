@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/gif" href="/t-shirt/images/favicon.gif" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">  -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/sanitize.css" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    
+    <title>Tシャツ申し込みフォーム</title>
+</head>
+
+<body>
+    <div id="loading"></div>
+    <div id="warning">
+        <!-- <p>みえます？</p> -->
+        <div class="message-box">
+            <div class="warning-messages">
+                <h3 id="waring-title"></h3>
+                <p id="waring-message"></p>
+                <div class="login-information">
+                    <p>現在、<a href="" id="email"></a> でログインしています。</p>
+                    <p>名前：<a id="name"></a> 学籍番号：<a id="number"></a></p>
+                </div>
+                <div id="links">
+                    <p><a href="./login">保護者アカウントでログインする</a></p>
+                    <p id="continue"><a href="#">現在のアカウントで無理やり入る(送信はできません)</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="header-title">
+            <h1 class="ordinal">Tシャツ<wbr>申し込み<wbr>フォーム</h1>
+
+        </div>
+        <nav>
+            <p><a href="./login">login</a></p>
+            <p><a href=".">ここ</a></p>
+            <p><a id="logout" href=".">logout</a></p>
+        </nav>
+    </header>
+    <div class="header-border"></div>
+
+    <main>
+        <div class="set">
+            <div class="title">
+                <h2>サイズ</h2>
+                <div class="border"></div>
+            </div>
+            <form class="size">
+                <input class="size-item radio-button" type="radio" name="size" value="SS" id="SS">
+                <div class="size-label"><label class="size-item size-item-1" for="SS">SS</label></div>
+                <input class="size-item radio-button" type="radio" name="size" value="S" id="S">
+                <div class="size-label"><label class="size-item size-item-2" for="S">S</label></div>
+                <input class="size-item radio-button" type="radio" name="size" value="M" id="M" checked>
+                <div class="size-label"><label class="size-item size-item-3" for="M">M</label></div>
+                <input class="size-item radio-button" type="radio" name="size" value="L" id="L">
+                <div class="size-label"><label class="size-item size-item-4" for="L">L</label></div>
+                <input class="size-item radio-button" type="radio" name="size" value="XL" id="XL">
+                <div class="size-label"><label class="size-item size-item-5" for="XL">XL</label></div>
+            </form>
+            <!-- <p>おいしい</p> -->
+        </div>
+        <div class="set">
+            <div class="title">
+                <h2>Tシャツ</h2>
+                <div class="border"></div>
+            </div>
+            <article>
+                <p id="error">エラー！</p>
+            </article>
+            <div class="table">
+                <table id="t-shirt">
+                    <tr>
+                        <th>学籍番号</th>
+                        <th>学年</th>
+                        <th>クラス</th>
+                        <th>番号</th>
+                        <th>名前</th>
+                    </tr>
+                    <tr>
+                        <td>61229</td>
+                        <td>S1</td>
+                        <td>B</td>
+                        <td>46</td>
+                        <td>もろこし</td>
+                    </tr>
+                    <tr>
+                        <td>61229</td>
+                        <td>S1</td>
+                        <td>B</td>
+                        <td>46</td>
+                        <td>もろこし</td>
+                    </tr>
+                    <tr>
+                        <td>61229</td>
+                        <td>S1</td>
+                        <td>B</td>
+                        <td>46</td>
+                        <td>もろこし</td>
+                    </tr>
+                    <tr>
+                        <td>61229</td>
+                        <td>S1</td>
+                        <td>B</td>
+                        <td>46</td>
+                        <td>もろこし</td>
+                    </tr>
+                    <tr>
+                        <td>61229</td>
+                        <td>S1</td>
+                        <td>B</td>
+                        <td>46</td>
+                        <td>もろこし</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="image-container">
+            <img class="itec-logo" src="images/3_.png" alt="ITECロゴ">
+            <div class="copyright-container">
+                <p class="copyright">Copyright &copy; 2021 62nd 聖光祭 初期化部門 All Rights Reserved. </p>
+                <p class="copyright">Created by もろこし</p>
+            </div>
+        </div>
+        <div class="footer-links">
+            <p><a target="_blank" href="https://twitter.com/Akimasa_L">利用規約</a></p>
+            <p><a target="_blank" href="https://twitter.com/Akimasa_L">プライバシーポリシー</a></p>
+            <p><a target="_blank" href="https://twitter.com/Akimasa_L">個人情報保護方針</a></p>
+            <p><a target="_blank" href="https://seikosportsday-2020.web.app">体育祭のページ</a></p>
+            <p><a target="_blank" href="https://twitter.com/Akimasa_L">もろこしのTwitter</a></p>
+        </div>
+    </footer>
+    <!-- 
+    <script src="https://apis.google.com/js/api.js?useEmulator=true"></script>
+    <script src="https://apis.google.com/js/client:plusone.js" type="application/javascript"></script> -->
+    <script crossorigin src="https://apis.google.com/js/api.js"></script>
+    <script src="scripts/jquery-3.6.0.min.js"></script>
+    <script src="styles/style.js"></script>
+
+    <div id="firebase-scripts">
+
+        <script src="/__/firebase/8.7.0/firebase-app.js"></script>
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="/__/firebase/8.7.0/firebase-analytics.js"></script>
+        <!-- Add Firebase products that you want to use -->
+        <script src="/__/firebase/8.7.0/firebase-auth.js"></script>
+        <!-- <script src="/__/firebase/8.7.0/firebase-firestore.js"></script> Previously loaded Firebase SDKs -->
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js?useEmulator=true"></script>
+    </div>
+
+    <script src="scripts/gapi-init.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>

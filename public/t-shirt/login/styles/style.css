@@ -1,0 +1,15 @@
+@media (orientation: portrait) {
+    main {
+        flex-direction: row;
+    }
+    div.set {
+        margin: 0;
+    }
+    html {
+        height: 100%;
+    }
+    body {
+        margin: 0;
+        height: 100%;
+    }
+}

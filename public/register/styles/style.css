@@ -1,0 +1,30 @@
+:root{
+    --header-height : 50px;
+}
+
+body{
+    font-family:'Noto Sans JP', sans-serif;
+    font-weight: 200;
+    margin : 0 0 auto;
+    /* padding :15px 10px; */
+}
+header{
+    background-color: black;
+    padding :15px 10px;
+    /* width :100%; */
+    height: var(--header-height);
+    display: flex;
+    justify-content: center;
+    /* position: fixed;
+    z-index: 1; */
+    margin : 0  0 auto;
+    font-weight: 500;
+    font-size:  20px;
+
+}
+.title{
+    
+    color:white;
+    margin : 0 auto;
+    padding :15px 10px;
+}

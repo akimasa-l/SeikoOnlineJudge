@@ -1,0 +1,20 @@
+{
+  "name": "SeikoOnlineJudge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/gapi": "0.0.41",
+    "firebase": "^8.8.0",
+    "firebaseui": "^4.8.1",
+    "gcip-iap": "^0.1.4",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

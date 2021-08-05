@@ -1,0 +1,111 @@
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 300;
+
+    background-color: #fafafa;
+}
+header {
+    /* height: 1vh; */
+    display: flex;
+    /* position: fixed; */
+    /* width: 100%; */
+    border-bottom: 1px solid #000;
+    margin: 0 auto;
+}
+header nav {
+    display: flex;
+}
+header h1 {
+    margin: 15px;
+    font-size: 30px;
+    font-weight: 100;
+}
+@media (max-width: 400px) {
+    h1.ordinal{
+        display: none;
+    }
+}
+@media (min-width: 400px) {
+    h1.small{
+        display: none;
+    }
+}
+@media (max-width: 600px) {
+    header {
+        display: flex;
+        justify-content: center;
+    }
+    header nav {
+        display: none;
+    }
+}
+div.set {
+    width: 75%;
+    margin-left: 12.5%;
+    /*     
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    */
+}
+form.size {
+    /* display:grid;
+    justify-content: center;
+    flex-direction: column; */
+    width: 0%;
+    display: table;
+    text-align: center;
+    width: 0%;
+    margin: auto;
+}
+/* form.size div {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+} */
+div.border {
+    border-bottom: 0.5px solid #dddddd;
+    margin-bottom: 30px;
+}
+form.size div label {
+    font-size: var(--child-size);
+}
+div.row {
+    display: table-row;
+
+    border: 0.5px solid black;
+}
+div.cell {
+    display: table-cell;
+    text-align: center;
+}
+h2 {
+    margin: 30px;
+    display: flex;
+    font-weight: 100;
+    justify-content: center;
+    font-size: 6vmax;
+}
+div.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+div.test {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+input.size-item {
+    height: var(--child-size);
+    width: var(--child-size);
+}
+.size-item {
+    text-align: center;
+    margin: 0 auto;
+    margin: 5px 0px;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+:root {
+    --child-size: min(3vmax, 40px);
+}

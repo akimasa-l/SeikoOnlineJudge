@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/gif" href="/t-shirt/images/favicon.gif" />
+    <!-- update the version number as needed -->
+    <!-- <script defer src="/__/firebase/8.2.7/firebase-app.js"></script> -->
+    <!-- include only the Firebase features as you need -->
+    <!-- <script defer src="/__/firebase/8.2.7/firebase-auth.js"></script> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">  -->
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth__ja.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../styles/sanitize.css" rel="stylesheet" type="text/css">
+    <link href="../styles/style.css" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <title>ログイン</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-title">
+            <h1 class="ordinal">Tシャツ<wbr>申し込み<wbr>フォーム</h1>
+        </div>
+        <nav>
+            <p><a href=".">ここ</a></p>
+            <p><a id="logout" href=".">logout</a></p>
+        </nav>
+    </header>
+    <div class="header-border"></div>
+
+    <main class="login">
+        <div class="set">
+            <div class="title">
+                <h2>ログイン</h2>
+                <div class="border"></div>
+            </div>
+            <article>
+                <p>聖光<wbr>の<wbr>保護者<wbr>の<wbr>メールアドレス<wbr>で<wbr>ログイン<wbr>して<wbr>ください。</p>
+                <p class="desciption" hidden>
+                    生徒<wbr>の<wbr>名簿<wbr>の<wbr>スプレッドシート<wbr>に<wbr>アクセス<wbr>する<wbr>ため、<wbr>Google Drive<wbr>の<wbr>読み取り<wbr>の<wbr>許可<wbr>を<wbr>する<wbr>画面<wbr>が<wbr>現れ<wbr>ます。<wbr>勝手に<wbr>Google Drive<wbr>に<wbr>書き込まれる<wbr>ことは<wbr>あり<wbr>ません。<wbr>そのまま<wbr>許可<wbr>の<wbr>ボタン<wbr>を<wbr>押して<wbr>続行<wbr>して<wbr>ください。
+                </p>
+            </article>
+            <div id="firebaseui-auth-container"></div>
+            <div id="hide"></div>
+            <!-- <form class="size">
+                <input class="size-item radio-button" type="radio" name="size" value="SS" id="SS">
+                <div class="size-label"><label class="size-item size-item-1" for="SS">SS</label></div>
+                <input class="size-item radio-button" type="radio" name="size" value="S" id="S">
+                <div class="size-label"><label class="size-item size-item-2" for="S">S</label></div>
+                <input class="size-item radio-button" type="radio" name="size" value="M" id="M" checked>
+                <div class="size-label"><label class="size-item size-item-3" for="M">M</label></div>
+                <input class="size-item radio-button" type="radio" name="size" value="L" id="L">
+                <div class="size-label"><label class="size-item size-item-4" for="L">L</label></div>
+                <input class="size-item radio-button" type="radio" name="size" value="XL" id="XL">
+                <div class="size-label"><label class="size-item size-item-5" for="XL">XL</label></div>
+            </form> -->
+            <!-- <p>おいしい</p> -->
+
+        </div>
+
+    </main>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <script crossorigin="anonymous" type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="/__/firebase/8.7.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="/__/firebase/8.7.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="/__/firebase/8.7.0/firebase-auth.js"></script>
+    <!-- <script src="/__/firebase/8.7.0/firebase-firestore.js"></script> -->
+    <!-- Previously loaded Firebase SDKs -->
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js?useEmulator=true"></script>
+    <script crossorigin src="https://apis.google.com/js/api.js"></script>
+    <script src="../scripts/jquery-3.6.0.min.js"></script>
+    <script src="../scripts/gapi-init.js"></script>
+    <script type="text/javascript">
+        function hide() {
+            console.log("hide～～～～")
+            $("div#hide").offset($("button.firebaseui-idp-button.mdl-button.mdl-js-button.mdl-button--raised.firebaseui-idp-google.firebaseui-id-idp-button").offset())
+            $("div#hide").outerHeight($("button.firebaseui-idp-button.mdl-button.mdl-js-button.mdl-button--raised.firebaseui-idp-google.firebaseui-id-idp-button").outerHeight())
+            $("div#hide").outerWidth($("button.firebaseui-idp-button.mdl-button.mdl-js-button.mdl-button--raised.firebaseui-idp-google.firebaseui-id-idp-button").outerWidth())
+        }
+        // hide()
+        $(window).resize(hide)
+        $("button.firebaseui-idp-button.mdl-button.mdl-js-button.mdl-button--raised.firebaseui-idp-google.firebaseui-id-idp-button").off("click");
+        function initClient() {
+            console.log("function initClient was called.");
+            gapi.client.init({
+                apiKey: apiKey,
+                discoveryDocs: discoveryDocs,
+                clientId: clientId,
+                hosted_domain: "seiko.ac.jp",
+                scope: scopes,
+                ux_mode: "redirect",
+                redirect_uri: (new URL("..", location.href)).href,//cd ..
+            }).then(() => {
+                hide()
+                console.log("今からattachClickHandler実行させるぞ～～～～～～")
+                // Listen for sign-in state changes.
+                gapi.auth2.getAuthInstance().attachClickHandler(document.getElementById("hide"), { prompt: "select_account consent", }, () => { }, () => { });
+                setTimeout(hide,1000);
+            });
+        }
+
+
+        function handleClientLoad() {
+            console.log("function handleClientLoad was called.")
+            // Load the API client and auth2 library
+            gapi.load('client:auth2', initClient);
+        }
+
+
+        $(hide);
+
+        handleClientLoad();
+
+
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+        var uiConfig = {
+            credentialHelper: firebaseui.auth.CredentialHelper.GOOGLE_YOLO,
+            callbacks: {
+                signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+
+                    return true;
+                },
+            },
+            signInFlow: 'redirect',
+            signInSuccessUrl: '../',
+            tosUrl: "https://twitter.com/Akimasa_L",
+            privacyPolicyUrl: "https://twitter.com/Akimasa_L",
+            signInOptions: [
+                {
+                    provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+
+                    customParameters: {
+                        hd: "seiko.ac.jp",
+                        // auth_type: "reauthenticate"
+                        // scope:"openid email profile https://www.googleapis.com/auth/drive.readonly",
+                        prompt: "select_account consent",
+                        login_hint: 'p61229liu@seiko.ac.jp',
+                    },
+
+                    scopes: [
+                        "https://www.googleapis.com/auth/spreadsheets.readonly",
+                    ],
+                },
+            ],
+        };
+        ui.start('#firebaseui-auth-container', uiConfig);
+        $("button.firebaseui-idp-button.mdl-button.mdl-js-button.mdl-button--raised.firebaseui-idp-google.firebaseui-id-idp-button").on("ready", hide);
+    </script>
+
+</body>
+
+</html>
