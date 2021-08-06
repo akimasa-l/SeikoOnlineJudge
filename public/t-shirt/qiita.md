@@ -67,27 +67,27 @@ Googleフォームは、仕様上、ログインした人のアカウントに�
 - Firebase Authenticationで学校アカウント専用ログイン方式にして
 - Google API Client Library for JavaScriptでログインさせて
 - Sheets APIを使って
-- スプレッドシートからデータを取る
-- 学籍番号で二分探索する(競技プログラミング最高！！)
-- 結局firebase authは使ってない(かっこいいボタンを作るために犠牲になった)
-- だいたいは体育祭のページからデザインをパクりました
+- スプレッドシートからデータを取りました！
+- 学籍番号で二分探索しました(競技プログラミング最高！！)
+- 結局firebase authは使ってないです(かっこいいボタンを作るために犠牲になりました。)
+- だいたいは体育祭のページからデザインをパクりました。
 
 
 ### 隠し要素
 
-- ここを押すとログアウトできる
+- 実はここを押すとログアウトできます！
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/388631/c6f2f191-7d30-79c3-8797-2807b699dc3c.png)
 
-- ログイン中：なんとかってとこ押すとメールが送れる(なんでここをログアウトにしないんですか？)
+- ログイン中：なんとかってとこ押すとメールが送れます(なんでここをログアウトにしないんですか？)
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/388631/5e7b3744-ed04-58ac-2255-93410e998061.png)
 
-- レスポンシブデザインに対応しすぎてズーム率上げてもヘッダーしかデザインが変わらない
-- 生徒会アカウントで入るとちゃんと生徒会アカウントでログインしてますよ！！って出る
+- レスポンシブデザインに対応しすぎてズーム率上げてもヘッダーしかデザインが変わらなくなってます
+- 生徒会アカウントで入るとちゃんと生徒会アカウントでログインしてますよ！！って出ます！！
 
 ### つまづいたところ
 
-- FirebaseのGoogle Auth、どう考えてもgapi使ってるやろ！って思ったけどfirebase authの方でログインしたあと`gapi.auth2.getAuthInstance().isSignedIn.get()`すると`false`になる(cookieとかが違うんですかね)
-- firebase authの`user.getIdTokenResult().then()`使って得られる`accesstoken`、全然accesstokenじゃない(これなんなんですか？)。`Authorization:Bearer ${accesstoken}`ってrequests headerに打ち込んでGoogle APIを叩いてもHTTP status codeが`401(Unauthorized)`になる(これほんとになんのtokenなんですか？？？？)。
+- FirebaseのGoogle Auth、どう考えてもgapi使ってるやろ！って思ったんですけどfirebase authの方でログインしたあと`gapi.auth2.getAuthInstance().isSignedIn.get()`すると`false`になっちゃいます(cookieとかが違うんですかね)
+- firebase authの`user.getIdTokenResult().then()`使って得られる`accesstoken`、全然accesstokenじゃない(これなんなんですか？)。`Authorization:Bearer ${accesstoken}`ってrequests headerに打ち込んでGoogle APIを叩いてもHTTP status codeが`401(Unauthorized)`になりました(これほんとになんのtokenなんですか？？？？)。
 - 二分探索でバグらせた(もっと競プロをしよう！)
 
 
